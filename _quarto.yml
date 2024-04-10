@@ -3,25 +3,28 @@ project:
   output-dir: docs
   
 website:
-  title: "MY WEB SITE"
+  title: " "
   navbar:
     left:
       - href: index.qmd
         text: Home
       - projects.qmd
+      - coursework.qmd
     tools:
-      - icon: twitter
-        href: https://twitter.com/
-      - icon: github
-        href: https://github.com/YOURUSERNAME/YOURREPO
+      - icon: envelope
+        href: "pauledargyte@gmail.com"
+        target: _blank
+    
   page-footer:
-    right: "Built with [Quarto](https://quarto.org/)"
-    left: "&copy; Copyright 2023, YOUR NAME"
+    right: "&copy; 2024, Paulė Dargis"
 
 format:
   html:
-    theme: cerulean
+    head:
+      - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    theme: journal
     toc: true
+
 
 editor: source
 

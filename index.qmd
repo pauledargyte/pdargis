@@ -1,10 +1,22 @@
 ---
-title: "About Me"
+title: " "
+image: img/profile.png
 about:
-  id: me
-  template: broadside
-  image: img/profile.png
+  template: trestles
+  links:
+    - text: LinkedIn
+      icon: linkedin
+      href: https://www.linkedin.com/in/paul%C4%97-dargis-b967ab236/
+    - text: Github
+      icon: github
+      href: https://github.com/pauledargyte
+    - text: E-Mail
+      icon: envelope
+      href: "pauledargyte@gmail.com"
+  id: me 
 ---
+
+ PAULE DARGIS
 
 :::{#me}
 
@@ -15,5 +27,3 @@ about:
 ## Experience
 
 :::
-
-Thanks for checking out my web site!

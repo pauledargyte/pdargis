@@ -16,8 +16,29 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "About Me",
+    "title": " ",
     "section": "",
-    "text": "Thanks for checking out my web site!"
+    "text": "PAULE DARGIS"
+  },
+  {
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": " ",
+    "section": "Goals",
+    "text": "Goals"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": " ",
+    "section": "Education",
+    "text": "Education"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": " ",
+    "section": "Experience",
+    "text": "Experience"
   }
 ]
