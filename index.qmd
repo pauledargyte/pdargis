@@ -1,8 +1,8 @@
 ---
-title: " "
+title: "PAULĖ"
 image: img/profile.png
 about:
-  template: trestles
+  template: jolla
   links:
     - text: LinkedIn
       icon: linkedin
@@ -16,14 +16,12 @@ about:
   id: me 
 ---
 
- PAULE DARGIS
 
 :::{#me}
 
-## Goals
+## [About](about.qmd)
 
-## Education
+## [Experience](experience.qmd)
 
-## Experience
-
+## [New Classics](favorites.qmd)
 :::
