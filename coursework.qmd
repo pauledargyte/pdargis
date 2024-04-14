@@ -1,5 +1,19 @@
 ---
-title: "Coursework"
+title: ""
 ---
+## Coursework: 
+### University of California, Los Angeles - Master's of Applied Statistics & Data Science
 
-## Coursework
+<ul style="font-size: 1.1em;">
+  <li>STATS 400 Introduction to Probability Models</li>
+  <li>STATS 401 Survey of Methods in Modern Statistics</li>
+  <li>STATS 402 Applied Regression</li>
+  <li>STATS 403 Mathematical Statistics</li>
+  <li>STATS 404 Statistical Computing and Programming</li>
+  <li>STATS 405 Data Management</li>
+  <li>STATS 412 Advanced Regression and Predictive Modeling</li>
+  <li>STATS 416 Applied Geostatistics</li>
+  <li>STATS 417 Statistical Models in Finance</li>
+  <li>STATS 421 Advanced Statistical Communication</li>
+  <li>STATS 422 Data Visualization</li>
+</ul>

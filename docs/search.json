@@ -30,22 +30,141 @@
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
-    "title": " PAULĖ DARGIS ",
+    "title": "PAULĖ",
     "section": "Education",
-    "text": "Education"
+    "text": "Education\n\nUniversity of California, Los Angeles\n\nCollege of Physical Science\nExpected Graduation: June 2024\nApplied Statistics, master’s Student\n\n\n\nCalifornia State University, Long Beach\n\nCollege of Liberal Arts\nGraduated: May 2022\nEconomics, B.A."
   },
   {
     "objectID": "index.html#experience",
     "href": "index.html#experience",
-    "title": " PAULĖ DARGIS ",
+    "title": "PAULĖ",
     "section": "Experience",
-    "text": "Experience"
+    "text": "Experience\n\nUCLA Department of Statistics\n\nLos Angeles, CA\nResearcher\nSept. 2022 – Present\n\nCurrently working on the NADAC Dataset Cause of Death and Variable Significance Comparison\nUFO Sighting and Recession Analysis\nSignificance of Variable Changes for Bike Rentals\n\n\n\n\nSMC Department of Engineering\n\nSanta Monica, CA\nStudent\nAug. 2018 – Oct. 2019\n\nIntroductory physics classes focused on kinematics, magnetism, electricity, and optics with lab\n\n\n\n\nNorthrup Grumman Innovation Challenge\n\nEl Segundo, CA\nESHS Robotics Team\nAug. 2015 – Apr. 2017\n\nApplied innovative problem-solving skills to design and construct solutions addressing real-world challenges encountered in the aerospace industry"
   },
   {
     "objectID": "index.html#about",
     "href": "index.html#about",
-    "title": " PAULĖ DARGIS ",
+    "title": "PAULĖ",
     "section": "About",
-    "text": "About"
+    "text": "About\nBorn and raised in Los Angeles, I spent a significant amount of my free time poring over taxi cab maps during car rides and exploring Google Earth at home. I find joy in working with maps to unravel geographical complexities and uncover hidden patterns.\nPassionate about music, especially in the alternative and punk/rock genres? So am I! I’m on a (side) mission to create a radio station that celebrates the raw energy and creativity of underground music scenes.\nIf you have any advice, insights, or input on creating and establishing a radio station, I’d love to hear from you! Let’s collaborate to bring the sounds of indie bands and underground artists to the airwaves. Drop me a line at pauledargyte@gmail.com and let’s make some waves together!"
+  },
+  {
+    "objectID": "index.html#new-classics",
+    "href": "index.html#new-classics",
+    "title": "PAULĖ",
+    "section": "New Classics",
+    "text": "New Classics\n\nAbout"
+  },
+  {
+    "objectID": "index.html#about-1",
+    "href": "index.html#about-1",
+    "title": "PAULĖ",
+    "section": "About",
+    "text": "About\n:::"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Here are some visualizations of the age variable from the centenarians dataset:\n\n\nRows: 200 Columns: 8\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (4): name, place_of_death_or_residence, gender, still_alive\ndbl  (2): rank, age\ndate (2): birth_date, death_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\n\n\nWarning: package 'ggplot2' was built under R version 4.3.2\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(ggplot2)\n\n# Boxplot of age by gender\nggplot(centenarians, aes(x = gender, y = age, fill = gender)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of Age by Gender\",\n       x = \"Gender\",\n       y = \"Age\",\n       fill = \"Gender\")\n\n\n\n# Boxplot of age by location\nggplot(centenarians, aes(x = place_of_death_or_residence, y = age, fill = gender)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of Age by Location\",\n       x = \"Location\",\n       y = \"Age\",\n       fill = \"Gender\") +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate labels by 45 degrees"
+  },
+  {
+    "objectID": "projects.html#analysis-of-centenarians-age",
+    "href": "projects.html#analysis-of-centenarians-age",
+    "title": "Projects",
+    "section": "",
+    "text": "Here are some visualizations of the age variable from the centenarians dataset:\n\n\nRows: 200 Columns: 8\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (4): name, place_of_death_or_residence, gender, still_alive\ndbl  (2): rank, age\ndate (2): birth_date, death_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\n\n\nWarning: package 'ggplot2' was built under R version 4.3.2\n\n\n\n\n\n\n\n\n\n\n\n\nlibrary(ggplot2)\n\n# Boxplot of age by gender\nggplot(centenarians, aes(x = gender, y = age, fill = gender)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of Age by Gender\",\n       x = \"Gender\",\n       y = \"Age\",\n       fill = \"Gender\")\n\n\n\n# Boxplot of age by location\nggplot(centenarians, aes(x = place_of_death_or_residence, y = age, fill = gender)) +\n  geom_boxplot() +\n  labs(title = \"Boxplot of Age by Location\",\n       x = \"Location\",\n       y = \"Age\",\n       fill = \"Gender\") +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate labels by 45 degrees"
+  },
+  {
+    "objectID": "experience.html",
+    "href": "experience.html",
+    "title": "Experience",
+    "section": "",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac lorem vitae mauris placerat mollis nec nec ex. Integer non dolor in libero congue bibendum. Phasellus ullamcorper consequat ante, nec aliquet risus ultricies sed. Duis vitae vehicula justo, eget ultricies metus. Aenean et felis eget tortor maximus tristique.\n\n\nYou can jump to the “New Classics” section by clicking here."
+  },
+  {
+    "objectID": "experience.html#anchor-link-to-new-classics",
+    "href": "experience.html#anchor-link-to-new-classics",
+    "title": "Experience",
+    "section": "",
+    "text": "You can jump to the “New Classics” section by clicking here."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "College of Physical Science\nExpected Graduation: June 2024\nApplied Statistics, master’s Student\n\n\n\n\n\nCollege of Liberal Arts\nGraduated: May 2022\nEconomics, B.A.\n\n\n\n\n\n\n\n\nEl Segundo, CA\nAdministrative Assistant\nMar 2020 – Current\n\nManage insurance reconciliations, track controlled stock, maintain accounts, process clinical claims, archive prescriptions\nManage sensitive data input in over 15 Excel spreadsheets, retrieve and deliver information quarterly\nAddress and resolve patient concerns\n\n\n\n\n\n\nEl Segundo, CA\nIntern\nJun 2017 – Aug 2020\n\nModel, 3-D print, and test antennas for satellites\nEvaluate and analyze data sets related to antenna performance\n\n\n\n\n\n\nEl Segundo, CA\nClerk\nApril 2017 – Mar 2020\n\nManage night/closing shifts, inventory management\n\n\n\n\n\n\n\n\n\nLos Angeles, CA\nResearcher\nSept. 2022 – Present\n\nCurrently working on the NADAC Dataset Cause of Death and Variable Significance Comparison\nUFO Sighting and Recession Analysis\nSignificance of Variable Changes for Bike Rentals\n\n\n\n\n\n\nSanta Monica, CA\nStudent\nAug. 2018 – Oct. 2019\n\nIntroductory physics classes focused on kinematics, magnetism, electricity, and optics with lab\n\n\n\n\n\n\nEl Segundo, CA\nESHS Robotics Team\nAug. 2015 – Apr. 2017\n\nApplied innovative problem-solving skills to design and construct solutions addressing real-world challenges encountered in the aerospace industry"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "College of Physical Science\nExpected Graduation: June 2024\nApplied Statistics, master’s Student\n\n\n\n\n\nCollege of Liberal Arts\nGraduated: May 2022\nEconomics, B.A."
+  },
+  {
+    "objectID": "cv.html#work-experience",
+    "href": "cv.html#work-experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "El Segundo, CA\nAdministrative Assistant\nMar 2020 – Current\n\nManage insurance reconciliations, track controlled stock, maintain accounts, process clinical claims, archive prescriptions\nManage sensitive data input in over 15 Excel spreadsheets, retrieve and deliver information quarterly\nAddress and resolve patient concerns\n\n\n\n\n\n\nEl Segundo, CA\nIntern\nJun 2017 – Aug 2020\n\nModel, 3-D print, and test antennas for satellites\nEvaluate and analyze data sets related to antenna performance\n\n\n\n\n\n\nEl Segundo, CA\nClerk\nApril 2017 – Mar 2020\n\nManage night/closing shifts, inventory management"
+  },
+  {
+    "objectID": "cv.html#experience",
+    "href": "cv.html#experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Los Angeles, CA\nResearcher\nSept. 2022 – Present\n\nCurrently working on the NADAC Dataset Cause of Death and Variable Significance Comparison\nUFO Sighting and Recession Analysis\nSignificance of Variable Changes for Bike Rentals\n\n\n\n\n\n\nSanta Monica, CA\nStudent\nAug. 2018 – Oct. 2019\n\nIntroductory physics classes focused on kinematics, magnetism, electricity, and optics with lab\n\n\n\n\n\n\nEl Segundo, CA\nESHS Robotics Team\nAug. 2015 – Apr. 2017\n\nApplied innovative problem-solving skills to design and construct solutions addressing real-world challenges encountered in the aerospace industry"
+  },
+  {
+    "objectID": "index.html#work-experience",
+    "href": "index.html#work-experience",
+    "title": "PAULĖ",
+    "section": "Work Experience",
+    "text": "Work Experience\n\nSt. Antony Pharmacy Inc.\n\nEl Segundo, CA\nAdministrative Assistant\nMar 2020 – Current\n\nManage insurance reconciliations, track controlled stock, maintain accounts, process clinical claims, archive prescriptions\nManage sensitive data input in over 15 Excel spreadsheets, retrieve and deliver information quarterly\nAddress and resolve patient concerns\n\n\n\n\nBoeing Co.\n\nEl Segundo, CA\nIntern\nJun 2017 – Aug 2020\n\nModel, 3-D print, and test antennas for satellites\nEvaluate and analyze data sets related to antenna performance\n\n\n\n\nThe Habit Burger Grill\n\nEl Segundo, CA\nClerk\nApril 2017 – Mar 2020\n\nManage night/closing shifts, inventory management"
+  },
+  {
+    "objectID": "index.html#experience-1",
+    "href": "index.html#experience-1",
+    "title": "PAULĖ",
+    "section": "Experience",
+    "text": "Experience\n\nUCLA Department of Statistics\n\nLos Angeles, CA\nResearcher\nSept. 2022 – Present\n\nCurrently working on the NADAC Dataset Cause of Death and Variable Significance Comparison\nUFO Sighting and Recession Analysis\nSignificance of Variable Changes for Bike Rentals\n\n\n\n\nSMC Department of Engineering\n\nSanta Monica, CA\nStudent\nAug. 2018 – Oct. 2019\n\nIntroductory physics classes focused on kinematics, magnetism, electricity, and optics with lab\n\n\n\n\nNorthrup Grumman Innovation Challenge\n\nEl Segundo, CA\nESHS Robotics Team\nAug. 2015 – Apr. 2017\n\nApplied innovative problem-solving skills to design and construct solutions addressing real-world challenges encountered in the aerospace industry"
+  },
+  {
+    "objectID": "coursework.html",
+    "href": "coursework.html",
+    "title": " PAULĖ ",
+    "section": "",
+    "text": "STATS 400 Introduction to Probability Models\n\n\nSTATS 401 Survey of Methods in Modern Statistics\n\n\nSTATS 402 Applied Regression\n\n\nSTATS 403 Mathematical Statistics\n\n\nSTATS 404 Statistical Computing and Programming\n\n\nSTATS 405 Data Management\n\n\nSTATS 412 Advanced Regression and Predictive Modeling\n\n\nSTATS 416 Applied Geostatistics\n\n\nSTATS 417 Statistical Models in Finance\n\n\nSTATS 421 Advanced Statistical Communication\n\n\nSTATS 422 Data Visualization"
+  },
+  {
+    "objectID": "coursework.html#coursework",
+    "href": "coursework.html#coursework",
+    "title": " PAULĖ ",
+    "section": "",
+    "text": "STATS 400 Introduction to Probability Models\n\n\nSTATS 401 Survey of Methods in Modern Statistics\n\n\nSTATS 402 Applied Regression\n\n\nSTATS 403 Mathematical Statistics\n\n\nSTATS 404 Statistical Computing and Programming\n\n\nSTATS 405 Data Management\n\n\nSTATS 412 Advanced Regression and Predictive Modeling\n\n\nSTATS 416 Applied Geostatistics\n\n\nSTATS 417 Statistical Models in Finance\n\n\nSTATS 421 Advanced Statistical Communication\n\n\nSTATS 422 Data Visualization"
+  },
+  {
+    "objectID": "coursework.html#masters-of-applied-statistics-and-data-science",
+    "href": "coursework.html#masters-of-applied-statistics-and-data-science",
+    "title": "Coursework",
+    "section": "Master’s of Applied Statistics and Data Science",
+    "text": "Master’s of Applied Statistics and Data Science\n\n400 Introduction to Probability Models\n401 Survey of Methods in Modern Statistics\n402 Applied Regression\n403 Mathematical Statistics\n404 Statistical Computing and Programming\n405 Data Management\n412 Advanced Regression and Predictive Modeling\n416 Applied Geostatistics\n417 Statistical Models in Finance\n421 Advanced Statistical Communication\n422 Data Visualization"
+  },
+  {
+    "objectID": "coursework.html#university-of-california---los-angeles",
+    "href": "coursework.html#university-of-california---los-angeles",
+    "title": "Coursework",
+    "section": "University of California - Los Angeles",
+    "text": "University of California - Los Angeles\n\n\nSTATS 400 Introduction to Probability Models\n\n\nSTATS 401 Survey of Methods in Modern Statistics\n\n\nSTATS 402 Applied Regression\n\n\nSTATS 403 Mathematical Statistics\n\n\nSTATS 404 Statistical Computing and Programming\n\n\nSTATS 405 Data Management\n\n\nSTATS 412 Advanced Regression and Predictive Modeling\n\n\nSTATS 416 Applied Geostatistics\n\n\nSTATS 417 Statistical Models in Finance\n\n\nSTATS 421 Advanced Statistical Communication\n\n\nSTATS 422 Data Visualization"
+  },
+  {
+    "objectID": "thesis.html",
+    "href": "thesis.html",
+    "title": "THESIS",
+    "section": "",
+    "text": "Los Angeles Fatal Car Accidents in Intersections\n\n\nTraffic Data:\n\n\nFatal Count: 2787 \n\n\nFatal Intersection Count: 886 \n\n\nProportion of Fatal Accidents: 0.00631127 \n\n\nProportion of Fatal Accidents in Intersection : 0.3179046 \n\n\nSampled Data:\n\n\nFatal Count: 248 \n\n\nFatal Intersection Count: 79 \n\n\nProportion of Fatal Accidents: 0.005616069 \n\n\nProportion of Fatal Accidents in Intersection : 0.3185484 \n\n\nWestwood Data:\n\n\nFatal Count: 17 \n\n\nFatal Intersection Count: 5 \n\n\nProportion of Fatal Accidents: 0.004049547 \n\n\nProportion of Fatal Accidents in Intersection : 0.2941176 \n\n\nBoyle Heights Data:\n\n\nFatal Count: 53 \n\n\nFatal Intersection Count: 16 \n\n\nProportion of Fatal Accidents: 0.00589872 \n\n\nProportion of Fatal Accidents in Intersection : 0.3018868 \n\n\nSouth LA Data:\n\n\nFatal Count: 362 \n\n\nFatal Intersection Count: 126 \n\n\nProportion of Fatal Accidents: 0.008992225 \n\n\nProportion of Fatal Accidents in Intersection : 0.3480663"
   }
 ]

@@ -1,40 +1,4 @@
----
-title: "PAULĖ"
-image: img/profile.png
-about:
-  template: jolla
-  links:
-    - text: LinkedIn
-      icon: linkedin
-      href: https://www.linkedin.com/in/paul%C4%97-dargis-b967ab236/
-    - text: Github
-      icon: github
-      href: https://github.com/pauledargyte
-    - text: E-Mail
-      icon: envelope
-      href: "pauledargyte@gmail.com"
-  id: me 
----
-
-:::{#me}
-
-## [About](#about)
-
-## [Resume](#resume)
-
-## [Thesis](thesis.qmd)
-
-:::
-# About {#about}
-
-
-Born and raised in Los Angeles, I spent a significant amount of my free time poring over taxi cab maps during car rides to and from various parts of the city. 
-
-also I love my cat 
-![Profile Image](img/usas1.png){ width=180 height=84 }
-
-
-# Resume {#resume}
+# Curriculum Vitae
 
 ## Education
 

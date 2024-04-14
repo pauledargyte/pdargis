@@ -1,0 +1,193 @@
+---
+title: "THESIS"
+---
+
+# Los Angeles Fatal Car Accidents in Intersections
+
+```{r, echo = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+setwd("/Users/pauledargyte/Desktop/thesis/_LAPD")
+
+# Los Angeles Traffic Collision Data and MO Code Descriptors
+traffic_data<- read.csv("_clean_data/traffic_data.csv")
+mocode_data<- read.csv("_clean_data/mocode_data.csv")
+
+
+#register_google(key = "AIzaSyAMk50XsEg_MF3cjoXe_vgWWOW75RVITOY") # Register Google API key
+```
+
+
+```{r Install Packages, echo = FALSE}
+#install.packages("ggplot2")
+#install.packages('ggmap')
+#install.packages('spatstat')
+#install.packages("geoR")
+#install.packages("tmap")
+#install.packages("sf")
+```
+
+```{r sampling, echo = FALSE}
+# Set seed for reproducibility for 10% random sampling 
+set.seed(505)
+
+# Define the latitude and longitude boundaries for the Westwood area
+westwood_lat_min <- 34.05
+westwood_lat_max <- 34.08
+westwood_long_min <- -118.47
+westwood_long_max <- -118.43
+
+# Define the latitude and longitude boundaries for Boyle Heights
+boyle_heights_lat_min <- 34.018
+boyle_heights_lat_max <- 34.057
+boyle_heights_long_min <- -118.234
+boyle_heights_long_max <- -118.197
+
+# Define the latitude and longitude boundaries for South Los Angeles area
+south_la_lat_min <- 33.9
+south_la_lat_max <- 34.0
+south_la_long_min <- -118.3
+south_la_long_max <- -118.2
+
+
+# Randomly sample 10% of the data
+sampled_data <- traffic_data[sample(nrow(traffic_data), nrow(traffic_data) * 0.1), ]
+
+westwood_data <- traffic_data[
+  traffic_data$Latitude >= westwood_lat_min &
+  traffic_data$Latitude <= westwood_lat_max &
+  traffic_data$Longitude >= westwood_long_min &
+  traffic_data$Longitude <= westwood_long_max,
+]
+
+boyle_heights_data <- traffic_data[
+  traffic_data$Latitude >= boyle_heights_lat_min &
+  traffic_data$Latitude <= boyle_heights_lat_max &
+  traffic_data$Longitude >= boyle_heights_long_min &
+  traffic_data$Longitude <= boyle_heights_long_max,
+]
+
+south_la_data <- traffic_data[
+  traffic_data$Latitude >= south_la_lat_min &
+  traffic_data$Latitude <= south_la_lat_max &
+  traffic_data$Longitude >= south_la_long_min &
+  traffic_data$Longitude <= south_la_long_max,
+]
+
+
+#head(westwood_data)
+#head(sampled_data)
+#head(boyle_heights_data)
+#head(south_la_data)
+```
+
+```{r frequency of accidents for each dataset, echo = FALSE}
+fatal_count <- function(data) {
+  # Filter the data to include only fatal accidents in intersections
+  fatal_data <- data[data$Fatality == 1, ]
+  # Count the number of fatal accidents in intersections
+  fatal_count <- nrow(fatal_data)
+  return(fatal_count)
+}
+
+# Count the frequency of fatal accidents in intersections for each dataset
+fatal_intersection_count <- function(data) {
+  # Filter the data to include only fatal accidents in intersections
+  fatal_intersection_data <- data[data$Fatality == 1 & data$Intersection == "Yes", ]
+  # Count the number of fatal accidents in intersections
+  fatal_intersection_count <- nrow(fatal_intersection_data)
+  return(fatal_intersection_count)
+}
+
+# Calculate the proportion of fatal accidents compared to the total number of accidents for each dataset
+proportion_fatal_accidents <- function(data) {
+  # Calculate total number of accidents
+  total_accidents <- nrow(data)
+  # Calculate total number of fatal accidents
+  total_fatal_accidents <- sum(data$Fatality == 1)
+  # Calculate proportion of fatal accidents
+  proportion_fatal <- total_fatal_accidents / total_accidents
+  return(proportion_fatal)
+}
+
+# Calculate the proportion of fatal accidents compared to the total number of fatal accidents
+proportion_fatal_in_intersections <- function(data) {
+  # Calculate the total number of fatal accidents
+  total_fatal <- sum(data$Fatality == 1)
+  # Calculate the number of fatal accidents in intersections
+  fatal_in_intersections <- fatal_intersection_count(data)
+  # Calculate the proportion
+  proportion <- fatal_in_intersections / total_fatal
+  return(proportion)
+}
+
+# Calculate fatal intersection count and proportion of fatal accidents for each dataset
+traffic_data_fatal_count <- fatal_count(traffic_data)
+traffic_data_fatal_intersection_count <- fatal_intersection_count(traffic_data)
+traffic_data_proportion_fatal <- proportion_fatal_accidents(traffic_data)
+traffic_data_proportion_fatal_intersections <- proportion_fatal_in_intersections(traffic_data)
+
+
+sampled_data_fatal_count <- fatal_count(sampled_data)
+sampled_data_fatal_intersection_count <- fatal_intersection_count(sampled_data)
+sampled_data_proportion_fatal <- proportion_fatal_accidents(sampled_data)
+sampled_data_proportion_fatal_intersections <- proportion_fatal_in_intersections(sampled_data)
+
+westwood_data_fatal_count <- fatal_count(westwood_data)
+westwood_data_fatal_intersection_count <- fatal_intersection_count(westwood_data)
+westwood_data_proportion_fatal <- proportion_fatal_accidents(westwood_data)
+westwood_data_proportion_fatal_intersections <- proportion_fatal_in_intersections(westwood_data)
+
+boyle_heights_data_fatal_count <- fatal_count(boyle_heights_data)
+boyle_heights_data_fatal_intersection_count <- fatal_intersection_count(boyle_heights_data)
+boyle_heights_data_proportion_fatal <- proportion_fatal_accidents(boyle_heights_data)
+boyle_heights_data_proportion_fatal_intersections <- proportion_fatal_in_intersections(boyle_heights_data)
+
+south_la_data_fatal_count <- fatal_count(south_la_data)
+south_la_data_fatal_intersection_count <- fatal_intersection_count(south_la_data)
+south_la_data_proportion_fatal <- proportion_fatal_accidents(south_la_data)
+south_la_data_proportion_fatal_intersections <- proportion_fatal_in_intersections(south_la_data)
+
+# Print the results
+cat("Traffic Data:\n")
+cat("Fatal Count:", traffic_data_fatal_count, "\n")
+cat("Fatal Intersection Count:", traffic_data_fatal_intersection_count, "\n")
+cat("Proportion of Fatal Accidents:", traffic_data_proportion_fatal, "\n\n")
+cat("Proportion of Fatal Accidents in Intersection :", traffic_data_proportion_fatal_intersections, "\n\n")
+
+cat("Sampled Data:\n")
+cat("Fatal Count:", sampled_data_fatal_count, "\n")
+cat("Fatal Intersection Count:", sampled_data_fatal_intersection_count, "\n")
+cat("Proportion of Fatal Accidents:", sampled_data_proportion_fatal, "\n\n")
+cat("Proportion of Fatal Accidents in Intersection :", sampled_data_proportion_fatal_intersections, "\n\n")
+
+cat("Westwood Data:\n")
+cat("Fatal Count:", westwood_data_fatal_count, "\n")
+cat("Fatal Intersection Count:", westwood_data_fatal_intersection_count, "\n")
+cat("Proportion of Fatal Accidents:", westwood_data_proportion_fatal, "\n\n")
+cat("Proportion of Fatal Accidents in Intersection :", westwood_data_proportion_fatal_intersections, "\n\n")
+
+cat("Boyle Heights Data:\n")
+cat("Fatal Count:", boyle_heights_data_fatal_count, "\n")
+cat("Fatal Intersection Count:", boyle_heights_data_fatal_intersection_count, "\n")
+cat("Proportion of Fatal Accidents:", boyle_heights_data_proportion_fatal, "\n")
+cat("Proportion of Fatal Accidents in Intersection :", boyle_heights_data_proportion_fatal_intersections, "\n\n")
+
+cat("South LA Data:\n")
+cat("Fatal Count:", south_la_data_fatal_count, "\n")
+cat("Fatal Intersection Count:", south_la_data_fatal_intersection_count, "\n")
+cat("Proportion of Fatal Accidents:", south_la_data_proportion_fatal, "\n")
+cat("Proportion of Fatal Accidents in Intersection :", south_la_data_proportion_fatal_intersections, "\n\n")
+
+
+
+```
+
+
+
+
+
+
+
+    

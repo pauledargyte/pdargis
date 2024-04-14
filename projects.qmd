@@ -1,9 +1,62 @@
----
-title: "Projects"
----
+# Projects
 
-## Project 1
+## Analysis of Centenarians' Age
 
-## Project 2
+Here are some visualizations of the age variable from the centenarians dataset:
+```{r, echo = FALSE}
 
-## Project 3
+centenarians <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-30/centenarians.csv')
+
+```
+### Histogram
+
+```{r histogram, echo = FALSE}
+library(ggplot2)
+
+# Assuming the 'centenarians' dataset has been loaded previously
+
+# Histogram
+ggplot(centenarians, aes(x = age)) +
+  geom_histogram(binwidth = 1, fill = "skyblue", color = "black", alpha = 0.7) +
+  labs(title = "Histogram of Age",
+       x = "Age",
+       y = "Frequency")
+
+# Density plot
+ggplot(centenarians, aes(x = age)) +
+  geom_density(fill = "skyblue", color = "black") +
+  labs(title = "Density Plot of Age",
+       x = "Age",
+       y = "Density")
+
+# Boxplot
+ggplot(centenarians, aes(y = age)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  labs(title = "Boxplot of Age",
+       x = "",
+       y = "Age")
+```
+
+```{r}
+
+library(ggplot2)
+
+# Boxplot of age by gender
+ggplot(centenarians, aes(x = gender, y = age, fill = gender)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of Age by Gender",
+       x = "Gender",
+       y = "Age",
+       fill = "Gender")
+
+# Boxplot of age by location
+ggplot(centenarians, aes(x = place_of_death_or_residence, y = age, fill = gender)) +
+  geom_boxplot() +
+  labs(title = "Boxplot of Age by Location",
+       x = "Location",
+       y = "Age",
+       fill = "Gender") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))  # Rotate labels by 45 degrees
+
+```
+
