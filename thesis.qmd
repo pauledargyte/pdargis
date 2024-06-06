@@ -97,6 +97,7 @@ dtla_data <- traffic_data[
 #head(dtla_data)
 ```
 
+### Frequencies
 ```{r frequency of accidents for each dataset, echo = FALSE}
 fatal_count <- function(data) {
   # Filter the data to include only fatal accidents in intersections
