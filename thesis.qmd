@@ -75,11 +75,26 @@ south_la_data <- traffic_data[
   traffic_data$Longitude <= south_la_long_max,
 ]
 
+## DTLA
+# Define the latitude and longitude boundaries for Downtown Los Angeles
+dtla_lat_min <- 34.033
+dtla_lat_max <- 34.061
+dtla_long_min <- -118.271
+dtla_long_max <- -118.243
+
+# Filter the data for Downtown Los Angeles
+dtla_data <- traffic_data[
+  traffic_data$Latitude >= dtla_lat_min &
+  traffic_data$Latitude <= dtla_lat_max &
+  traffic_data$Longitude >= dtla_long_min &
+  traffic_data$Longitude <= dtla_long_max,
+]
 
 #head(westwood_data)
 #head(sampled_data)
 #head(boyle_heights_data)
 #head(south_la_data)
+#head(dtla_data)
 ```
 
 ```{r frequency of accidents for each dataset, echo = FALSE}
@@ -149,6 +164,11 @@ south_la_data_fatal_intersection_count <- fatal_intersection_count(south_la_data
 south_la_data_proportion_fatal <- proportion_fatal_accidents(south_la_data)
 south_la_data_proportion_fatal_intersections <- proportion_fatal_in_intersections(south_la_data)
 
+dtla_data_fatal_count <- fatal_count(dtla_data)
+dtla_data_fatal_intersection_count <- fatal_intersection_count(dtla_data)
+dtla_data_proportion_fatal <- proportion_fatal_accidents(dtla_data)
+dtla_data_proportion_fatal_intersections <- proportion_fatal_in_intersections(dtla_data)
+
 # Print the results
 cat("Traffic Data:\n")
 cat("Fatal Count:", traffic_data_fatal_count, "\n")
@@ -180,7 +200,11 @@ cat("Fatal Intersection Count:", south_la_data_fatal_intersection_count, "\n")
 cat("Proportion of Fatal Accidents:", south_la_data_proportion_fatal, "\n")
 cat("Proportion of Fatal Accidents in Intersection :", south_la_data_proportion_fatal_intersections, "\n\n")
 
-
+cat("DTLA Data:\n")
+cat("Fatal Count:", dtla_data_fatal_count, "\n")
+cat("Fatal Intersection Count:", dtla_data_fatal_intersection_count, "\n")
+cat("Proportion of Fatal Accidents:", dtla_data_proportion_fatal, "\n")
+cat("Proportion of Fatal Accidents in Intersection :", dtla_data_proportion_fatal_intersections, "\n\n")
 
 ```
 
